@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.Collections;
 import java.util.Map;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class HelloWorldConfiguration extends Configuration {
     @NotEmpty
@@ -18,6 +19,9 @@ public class HelloWorldConfiguration extends Configuration {
 
     @NotEmpty
     private String defaultName = "Stranger";
+
+    @JsonProperty("swagger")
+    public SwaggerBundleConfiguration swaggerBundleConfiguration;
 
     @Valid
     @NotNull
